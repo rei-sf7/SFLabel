@@ -22,7 +22,8 @@ final class SFLabel: SKNode {
         self.setupBindings()
     }
     
-    /// 初期化（未使用）
+    /// 初期化（定義のみ、未使用）
+    /// - Parameter coder: -
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
