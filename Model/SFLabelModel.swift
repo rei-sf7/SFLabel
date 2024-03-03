@@ -37,6 +37,8 @@ protocol SFLabelModelProtocol {
     /// ラベルのテキストのフォントサイズを取得する
     /// - Returns: サイズ情報
     func getFontSize() -> CGFloat
+    
+    func setAlignmentMode(_ vertical: SKLabelVerticalAlignmentMode,_ horizontal: SKLabelHorizontalAlignmentMode)
 }
 
 final class SFLabelModel: SFLabelModelProtocol {
@@ -105,5 +107,10 @@ final class SFLabelModel: SFLabelModelProtocol {
     /// - Returns: カラー情報
     func getFontColor() -> UIColor {
         return self.label.fontColor!
+    }
+    
+    func setAlignmentMode(_ vertical: SKLabelVerticalAlignmentMode,_ horizontal: SKLabelHorizontalAlignmentMode) {
+        self.label.verticalAlignmentMode = vertical
+        self.label.horizontalAlignmentMode = horizontal
     }
 }

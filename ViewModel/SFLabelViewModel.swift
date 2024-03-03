@@ -15,6 +15,7 @@ protocol SFLabelViewModelProtocol {
     func setText(_ text: String)
     func getText() -> String
     func getLabelNode() -> SKLabelNode
+    func setAlignmentMode(_ vertical: SKLabelVerticalAlignmentMode,_ horizontal: SKLabelHorizontalAlignmentMode)
 }
 
 /// ビューモデルクラス
@@ -69,5 +70,9 @@ final class SFLabelViewModel: SFLabelViewModelProtocol {
     /// - Returns: カラー情報
     func getFontColor() -> UIColor {
         return self.model.getFontColor()
+    }
+    
+    func setAlignmentMode(_ vertical: SKLabelVerticalAlignmentMode,_ horizontal: SKLabelHorizontalAlignmentMode) {
+        self.model.setAlignmentMode(vertical, horizontal)
     }
 }

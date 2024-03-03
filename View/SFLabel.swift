@@ -38,8 +38,8 @@ final class SFLabel: SKNode {
         return self.viewModel.getText()
     }
     
-    func setAlignmentMode(_ vertical: SKLabelVerticalAlignmentMode, horizontal: SKLabelHorizontalAlignmentMode) {
-//        self.viewModel.setAlignmentMode(vertical, horizontal: horizontal)
+    func setAlignmentMode(_ vertical: SKLabelVerticalAlignmentMode,_ horizontal: SKLabelHorizontalAlignmentMode) {
+        self.viewModel.setAlignmentMode(vertical, horizontal)
     }
     
     /// ラベルのテキストのフォントカラーをセットする
