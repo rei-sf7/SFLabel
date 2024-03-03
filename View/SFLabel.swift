@@ -6,16 +6,6 @@ final class SFLabel: SKNode {
     /// ビューモデルクラス（プロトコル経由）
     private var viewModel: SFLabelViewModelProtocol!
     
-    /// ラベルのテキスト
-    var text: String {
-        get {
-            return self.viewModel.text
-        }
-        set(value) {
-            self.viewModel.text = value
-        }
-    }
-    
     /// 初期化
     override init() {
         super.init()
@@ -34,7 +24,18 @@ final class SFLabel: SKNode {
         let model = SFLabelModel() as SFLabelModelProtocol
         self.viewModel = SFLabelViewModel(model) as SFLabelViewModelProtocol
         /// 親ノードに子ノードを繋げる
-        self.addChild(self.viewModel.labelNode)
+        let labelNode = self.viewModel.getLabelNode()
+        self.addChild(labelNode)
+    }
+    
+    /// ラベルのテキストをセットする
+    func setText(_ text: String) {
+        self.viewModel.setText(text)
+    }
+    
+    /// ラベルのテキストをセットする
+    func getText() -> String {
+        return self.viewModel.getText()
     }
     
     func setAlignmentMode(_ vertical: SKLabelVerticalAlignmentMode, horizontal: SKLabelHorizontalAlignmentMode) {

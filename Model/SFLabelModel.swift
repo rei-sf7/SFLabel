@@ -2,8 +2,9 @@ import SpriteKit
 
 /// ラベルのモデルクラスのプロトコル
 protocol SFLabelModelProtocol {
-    /// ラベルノード
-    var label: SKLabelNode { get }
+//    /// ラベルノード
+//    var label: SKLabelNode { get }
+    func getLabelNode() -> SKLabelNode
     
     /// ラベルのテキストに適用するフォントの種類をセットする
     /// - Parameter fontName: フォント名
@@ -41,7 +42,7 @@ protocol SFLabelModelProtocol {
 final class SFLabelModel: SFLabelModelProtocol {
     
     /// ラベルノード
-    private(set) var label: SKLabelNode
+    private var label: SKLabelNode
     
     /// 初期化
     init() {
@@ -52,6 +53,10 @@ final class SFLabelModel: SFLabelModelProtocol {
         self.setFontColor(.dark)
         self.label.verticalAlignmentMode = .top
         self.label.horizontalAlignmentMode = .left
+    }
+    
+    func getLabelNode() -> SKLabelNode {
+        return self.label
     }
     
     /// ラベルのテキストに適用するフォントの種類をセットする
