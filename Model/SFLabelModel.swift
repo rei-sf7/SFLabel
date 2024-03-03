@@ -47,7 +47,7 @@ final class SFLabelModel: SFLabelModelProtocol {
     init() {
         self.label = SKLabelNode()
         self.setText("test message.")
-        self.setFontName(.Susiki)
+        self.setFontName(.Galvji)
         self.setFontSize(24)
         self.setFontColor(.dark)
         self.label.verticalAlignmentMode = .top
@@ -65,7 +65,6 @@ final class SFLabelModel: SFLabelModelProtocol {
     func getFontName() -> String {
         return self.label.fontName!
     }
-    
     
     /// ラベルに表示するテキストをセットする
     /// - Parameter text: テキスト情報
