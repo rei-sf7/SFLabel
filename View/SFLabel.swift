@@ -38,6 +38,10 @@ final class SFLabel: SKNode {
         return self.viewModel.getText()
     }
     
+    /// ラベルのテキストの垂直および水平方向の配置モードを設定します。
+    /// - Parameters:
+    ///   - vertical: テキストの垂直方向の配置モード
+    ///   - horizontal: テキストの水平方向の配置モード
     func setAlignmentMode(_ vertical: SKLabelVerticalAlignmentMode,_ horizontal: SKLabelHorizontalAlignmentMode) {
         self.viewModel.setAlignmentMode(vertical, horizontal)
     }

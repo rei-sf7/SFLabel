@@ -2,8 +2,8 @@ import SpriteKit
 
 /// ラベルのモデルクラスのプロトコル
 protocol SFLabelModelProtocol {
-//    /// ラベルノード
-//    var label: SKLabelNode { get }
+    /// ラベルのノードを取得します。
+    /// - Returns: ラベルのノード
     func getLabelNode() -> SKLabelNode
     
     /// ラベルのテキストに適用するフォントの種類をセットする
@@ -38,6 +38,10 @@ protocol SFLabelModelProtocol {
     /// - Returns: サイズ情報
     func getFontSize() -> CGFloat
     
+    /// ラベルのテキストの垂直および水平方向の配置モードを設定します。
+    /// - Parameters:
+    ///   - vertical: テキストの垂直方向の配置モード
+    ///   - horizontal: テキストの水平方向の配置モード
     func setAlignmentMode(_ vertical: SKLabelVerticalAlignmentMode,_ horizontal: SKLabelHorizontalAlignmentMode)
 }
 
@@ -57,6 +61,8 @@ final class SFLabelModel: SFLabelModelProtocol {
         self.label.horizontalAlignmentMode = .left
     }
     
+    /// ラベルのノードを取得します。
+    /// - Returns: ラベルのノード
     func getLabelNode() -> SKLabelNode {
         return self.label
     }
@@ -109,6 +115,10 @@ final class SFLabelModel: SFLabelModelProtocol {
         return self.label.fontColor!
     }
     
+    /// ラベルのテキストの垂直および水平方向の配置モードを設定します。
+    /// - Parameters:
+    ///   - vertical: テキストの垂直方向の配置モード
+    ///   - horizontal: テキストの水平方向の配置モード
     func setAlignmentMode(_ vertical: SKLabelVerticalAlignmentMode,_ horizontal: SKLabelHorizontalAlignmentMode) {
         self.label.verticalAlignmentMode = vertical
         self.label.horizontalAlignmentMode = horizontal
